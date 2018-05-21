@@ -1,0 +1,13 @@
+<div class="search-bg">
+  <div class="container-fluid" >    
+    <h3  class="page-title">Car Detail</h3>
+    <div class="manage-event-search-wrapper">      
+      <div class="search-filter-container">
+        <app-nav-bar (showTopicOffset)="loadTopicOffset($event)" class="searchFilter"></app-nav-bar>
+    </div> 
+    <div class="search-result-container">     
+      <app-car-detail [filteredObject]="filteredObjectData"></app-car-detail>    
+    </div>
+    </div>
+  </div>  
+</div>

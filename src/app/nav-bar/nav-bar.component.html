@@ -1,0 +1,20 @@
+
+<div class="search-filter-content">
+  <div  (click)="toggleCar($event)">Cars
+    <ul *ngIf="showBrand">
+      <li  (click)="onClickShowFord($event)">Ford
+        <ul *ngIf="showFord">
+          <li (click)="selectCar($event, 'Edge')">Edge</li>
+          <li (click)="selectCar($event, 'Escape')">Escape</li>
+        </ul>
+      </li>
+
+      <li (click)="onClickShowAcura($event)">Acura
+        <ul *ngIf="showAcura">
+          <li (click)="selectCar($event, 'ILX')">ILX</li>
+          <li (click)="selectCar($event, 'MDX')">MDX</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
