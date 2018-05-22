@@ -21,7 +21,7 @@ export class CarDetailService {
     }
     private baseApiUrl = 'http://localhost:3000/car/';
 
-    fetchTopicOffset(params: any) {
+    fetchCarDetail(params: any) {
         const  eventsUrl: string = this.baseApiUrl + 'getCar/' + params.carName;
         const headers = new Headers({ 'Content-Type': 'application/json' });
         const options = new RequestOptions({ headers: headers });

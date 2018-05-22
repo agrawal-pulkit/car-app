@@ -5,12 +5,22 @@
         <span class="filter-by">Car : {{car}}</span>
       </div>
       <div class="institution-users-wrapper">
-          <div class="chart-container">
-            <h3>Brand: {{topicOffsetData.brand}}</h3>
-            <p>{{topicOffsetData.summary}}</p>
-            <img src="{{topicOffsetData.imageUrls[0]}}" height="200" width="200">
-            <p>{{topicOffsetData.description}}</p> 
-            <img src="{{topicOffsetData.imageUrls[1]}}" height="250" width="250">
+          <div class="chart-container" >
+            <h3>Brand: {{carObjectData.brand}}</h3>
+            <h3>Model: {{carObjectData.model}}</h3>
+            <h3>Price: ${{carObjectData.pricing.price}} </h3>
+            <p>{{carObjectData.summary}}</p>
+            <img src="{{carObjectData.imageUrls[0]}}" height="400" width="400" class="center">
+            <h3>Features:</h3>
+            <ul *ngFor= "let feature of carObjectData.keyPoints.features">
+              <li>{{feature}}<li>
+            </ul>
+            <p>{{carObjectData.description}}</p> 
+            <img src="{{carObjectData.imageUrls[1]}}" height="250" width="250" class="center">
+            <h3>Reviews:</h3>
+            <ul *ngFor= "let review of carObjectData.reviews">
+              <li>{{review}}<li>
+            </ul>
           </div>
       </div> 
     </div>

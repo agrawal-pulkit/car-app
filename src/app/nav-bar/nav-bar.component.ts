@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-  @Output() showTopicOffset = new EventEmitter<boolean>();
+  @Output() showCarDetails = new EventEmitter<boolean>();
 
   showBrand = false;
   showFord = false;
@@ -35,7 +35,7 @@ export class NavBarComponent implements OnInit {
     const carObject: any = {};
     carObject.carName = car;
     event.stopPropagation(event);
-    this.showTopicOffset.emit(carObject);
+    this.showCarDetails.emit(carObject);
   }
 
   onClickShowFord(event) {

@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarContainerComponent implements OnInit {
 
-  filteredObjectData: any;
+  carObjectData: any;
   constructor() { }
 
   ngOnInit() {
   }
 
-  loadTopicOffset($event) {
-    console.log('loadFilteredevent:: ', $event);
-    this.filteredObjectData = $event;
+  loadCarDetails($event) {
+    console.log('loadCarDetailsevent:: ', $event);
+    this.carObjectData = $event;
   }
 
 }

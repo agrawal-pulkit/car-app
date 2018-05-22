@@ -10,26 +10,26 @@ import { CarDetailService } from './car-detail.service';
 })
 export class CarDetailComponent implements OnInit {
 
-  topicOffsetData: any;
+  carObjectData: any;
   showCarDetails = false;
-  @Input() filteredObject: any;
+  @Input() carObject: any;
 
   car: string;
 
 
   constructor(public router: Router,
-    public route: ActivatedRoute, public topicOffsetService: CarDetailService
+    public route: ActivatedRoute, public carDetailService: CarDetailService
   ) { }
 
   ngOnInit() {
-    console.log('hello `filtered events` component');
+    console.log('hello `Car Details` component');
   }
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnChanges() {
-    console.log('filteredObject inside `FilteredEventsComponent` filteredObject :: ', this.filteredObject);
-    if (this.filteredObject) {
-      this.car = this.filteredObject.carName;
+    console.log('carObjectData inside `CarDetailComponent` carObjectData :: ', this.carObjectData);
+    if (this.carObject) {
+      this.car = this.carObject.carName;
       const queryParams: any = {
         carName : this.car
       };
@@ -37,10 +37,10 @@ export class CarDetailComponent implements OnInit {
     }
   }
   fetchTopicOffsetDetail(queryParams) {
-    this.topicOffsetService.fetchTopicOffset(queryParams).subscribe(res => {
-      this.topicOffsetData = (res && res.carObject) ? res.carObject : null;
+    this.carDetailService.fetchCarDetail(queryParams).subscribe(res => {
+      this.carObjectData = (res && res.carObject) ? res.carObject : null;
       this.showCarDetails = true;
-      console.log('topicOffsetData: ', this.topicOffsetData);
+      console.log('carObjectData: ', this.carObjectData);
     });
   }
 
